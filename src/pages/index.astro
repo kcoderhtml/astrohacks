@@ -6,7 +6,8 @@ import Dropdown from "../components/Dropdown.astro";
 <Layout title="AstroHacks 2024">
 	<main>
 		<section class="full-height-section">
-			<h1>Register for AstroHacks 2024!</h1>
+			<h1>Register for</h1>
+			<h1>AstroHacks 2024!</h1>
 
 			<p class="text-center">Scroll to learn more</p>
 
@@ -171,6 +172,17 @@ import Dropdown from "../components/Dropdown.astro";
 				color: white;
 				font-size: 20px;
 				line-height: 1.6;
+			}
+
+			@media (max-width: 768px) {
+				main {
+					width: 90%;
+				}
+			}
+			@media (max-width: 480px) {
+				main {
+					width: 100%;
+				}
 			}
 
 			hr {
