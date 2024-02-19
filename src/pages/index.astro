@@ -1,30 +1,84 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Dropdown from "../components/Dropdown.astro";
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Welcome to AstroHacks!</h1>
+		<section class="full-height-section">
+			<h1>Register for AstroHacks 2024!</h1>
 
-		<p class="text-center">This is a Hackathon</p>
+			<p class="text-center">Scroll to learn more</p>
+
+			<svg
+				class="scroll-icon"
+				viewBox="0 0 48 48"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M8 44V32.15C8 31.4833 8.15867 30.85 8.476 30.25C8.79333 29.65 9.23467 29.1667 9.8 28.8L12 27.35C12.2333 30.15 12.6 32.5333 13.1 34.5C13.6 36.4667 14.3833 38.65 15.45 41.05L8 44ZM18.45 40C17.2833 37.8 16.4167 35.4667 15.85 33C15.2833 30.5333 15 27.9833 15 25.35C15 21.1833 15.8253 17.2587 17.476 13.576C19.1267 9.89335 21.3013 7.10135 24 5.20001C26.7 7.10001 28.8753 9.89201 30.526 13.576C32.1767 17.26 33.0013 21.1847 33 25.35C33 27.95 32.7167 30.4753 32.15 32.926C31.5833 35.3767 30.7167 37.7347 29.55 40H18.45ZM24 26C25.1 26 26.042 25.6087 26.826 24.826C27.61 24.0433 28.0013 23.1013 28 22C28 20.9 27.6087 19.9587 26.826 19.176C26.0433 18.3933 25.1013 18.0013 24 18C22.9 18 21.9587 18.392 21.176 19.176C20.3933 19.96 20.0013 20.9013 20 22C20 23.1 20.392 24.042 21.176 24.826C21.96 25.61 22.9013 26.0013 24 26ZM40 44L32.55 41.05C33.6167 38.65 34.4 36.4667 34.9 34.5C35.4 32.5333 35.7667 30.15 36 27.35L38.2 28.8C38.7667 29.1667 39.2087 29.65 39.526 30.25C39.8433 30.85 40.0013 31.4833 40 32.15V44Z"
+					fill="white"></path>
+			</svg>
+		</section>
+
+		<section class="dropdowns-section">
+			<Dropdown
+				title="What is AstroHacks"
+				body="AstroHacks 2024 will be held at the Boys and Girls Club of Irvine, 295 E Yale Loop, Irvine, CA 92604. The event will be held on April 13th for 12 hours, 9am to 9pm."
+			/>
+			<Dropdown
+				title="Who can attend"
+				body="AstroHacks is open to all high school students. No prior coding experience is required. We encourage students from all backgrounds to attend."
+			/>
+			<Dropdown
+				title="What to bring"
+				body="Bring your laptop, charger, and any other tech you need to build your project. We will provide food, drinks, and swag."
+			/>
+		</section>
+
+		<style>
+			main {
+				margin: auto;
+				padding: 1rem;
+				width: 800px;
+				max-width: calc(100% - 2rem);
+				color: white;
+				font-size: 20px;
+				line-height: 1.6;
+			}
+			h1 {
+				font-size: 4rem;
+				font-weight: 700;
+				line-height: 1;
+				text-align: center;
+				margin-bottom: 1em;
+			}
+
+			.full-height-section {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				padding: 2rem;
+			}
+
+			.dropdowns {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1rem;
+			}
+
+			.scroll-icon {
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+				transform: translateX(-50%) rotate(180deg);
+				width: 50px; /* Adjust as needed */
+				height: 50px; /* Adjust as needed */
+			}
+		</style>
 	</main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-</style>

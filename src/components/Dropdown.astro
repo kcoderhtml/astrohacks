@@ -1,0 +1,43 @@
+---
+interface Props {
+	title: string;
+	body: string;
+}
+
+const { title, body } = Astro.props;
+---
+
+<div class="dropdown">
+	<details>
+		<summary>{title}</summary>
+		<p class="dropdown-body">{body}</p>
+	</details>
+</div>
+
+<style>
+	.dropdown {
+		margin-bottom: 1rem;
+		border: 1px solid #e1e1e1;
+		padding: 0.25rem;
+		display: flex; /* Assuming this is already a flex container */
+	}
+
+	details {
+		text-align: left;
+		align-self: flex-start; /* Add this line */
+	}
+
+	.dropdown-body {
+		border-top: 1px solid #e1e1e1;
+		padding-top: 0.25rem;
+	}
+
+	summary {
+		font-weight: bold;
+		cursor: pointer;
+	}
+
+	summary:hover {
+		text-decoration: underline;
+	}
+</style>
