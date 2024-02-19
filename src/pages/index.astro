@@ -22,18 +22,75 @@ import Dropdown from "../components/Dropdown.astro";
 			</svg>
 		</section>
 
+		<hr />
+
+		<section class="about-section">
+			<h2>About AstroHacks</h2>
+			<p>
+				Whether you are a complete beginner who wants to dip your toes into the
+				world of Computer Science, or the next Zuckerberg in the making,
+				AstroHacks is for you! It’s a completely FREE coding competition for
+				high school students of ANY skill level. We’ll have prizes, food, and
+				above all we aim to create a space for students to hang out, learn
+				coding, build projects, and have fun! Check out some pics from Assemble,
+				another hackathon run by Hack Clubbers like us!
+			</p>
+
+			<div class="image-row">
+				<img src="images/assemble1.png" alt="AstroHacks 2024" />
+				<img src="images/assemble2.png" alt="AstroHacks 2024" />
+				<img src="images/assemble3.png" alt="AstroHacks 2024" />
+				<img src="images/assemble4.png" alt="AstroHacks 2024" />
+			</div>
+
+			<p>
+				Interested? Excited? Ready to compete with existing friends or new
+				friends? <a href="">Register today!</a>
+			</p>
+		</section>
+
 		<section class="dropdowns-section">
+			<h2>FAQs</h2>
 			<Dropdown
-				title="What is AstroHacks"
-				body="AstroHacks 2024 will be held at the Boys and Girls Club of Irvine, 295 E Yale Loop, Irvine, CA 92604. The event will be held on April 13th for 12 hours, 9am to 9pm."
+				title="Who can participate?"
+				body="Any high schooler can participate!"
 			/>
+			<Dropdown title="When and where is this hackathon?" body="">
+				<p class="text-left">
+					AstroHacks 2024 will be held at the Boys and Girls Club of Irvine, 295
+					E Yale Loop, Irvine, CA 92604. The event will be held on April 13th
+					for 12 hours, 9am to 9pm.
+				</p>
+				<br />
+				<p class="text-left">9am - Welcome in/Breakfast</p>
+				<p class="text-left">10am - Opening ceremony</p>
+				<p class="text-left">11am - Workshop #1</p>
+				<p class="text-left">12pm - Find/Organize your team</p>
+				<p class="text-left">1pm - Lunch/Start Hacking</p>
+				<p class="text-left">4pm - Icebreaker or Workshop #2</p>
+				<p class="text-left">5pm - Dinner/Continue Hacking</p>
+				<p class="text-left">7:30 - Presentations</p>
+				<p class="text-left">8:30 - Closing Ceremony- Finish by 9pm</p>
+			</Dropdown>
+
 			<Dropdown
-				title="Who can attend"
-				body="AstroHacks is open to all high school students. No prior coding experience is required. We encourage students from all backgrounds to attend."
+				title="Does this event cost money?"
+				body="Nope, this event will be completely free!"
 			/>
+
 			<Dropdown
-				title="What to bring"
-				body="Bring your laptop, charger, and any other tech you need to build your project. We will provide food, drinks, and swag."
+				title="What should I bring?"
+				body="A form of identification (Student ID, Drivers License, etc.), laptop, charger(s), and any other items that you think you'll need."
+			/>
+
+			<Dropdown
+				title="What if I have dietary restrictions?"
+				body="We will provide food along with vegetarian options but unfortunately we are not able to provide vegan options. If you prefer to bring your own food or you are vegan, we recommend you to bring your own meals. We are very sorry for the inconvenience."
+			/>
+
+			<Dropdown
+				title="I have more questions..."
+				body="I have a lot of ways you can contact me! You can shoot me a Discord friend request @congo17, a text on Slack @Chris (the profile picture with an anime guy smiling), text my phone at +1(951) 595 - 2909, or email me on my personal (because our org email is kinda iffy sometimes): chris981lee@outlook.com"
 			/>
 		</section>
 
@@ -41,18 +98,18 @@ import Dropdown from "../components/Dropdown.astro";
 			main {
 				margin: auto;
 				padding: 1rem;
-				width: 800px;
+				width: 75%;
 				max-width: calc(100% - 2rem);
 				color: white;
 				font-size: 20px;
 				line-height: 1.6;
 			}
-			h1 {
-				font-size: 4rem;
-				font-weight: 700;
-				line-height: 1;
-				text-align: center;
-				margin-bottom: 1em;
+
+			hr {
+				border: 0;
+				height: 1px;
+				background: white;
+				margin: 2em 0;
 			}
 
 			.full-height-section {
@@ -78,6 +135,29 @@ import Dropdown from "../components/Dropdown.astro";
 				transform: translateX(-50%) rotate(180deg);
 				width: 50px; /* Adjust as needed */
 				height: 50px; /* Adjust as needed */
+			}
+
+			.about-section {
+				margin: 2rem 0;
+			}
+
+			.about-section p {
+				margin: 1rem 0;
+			}
+
+			.image-row {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 1rem;
+			}
+
+			.image-row img {
+				width: 200px;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 10px;
+				border: 1px solid white;
 			}
 		</style>
 	</main>

@@ -10,7 +10,11 @@ const { title, body } = Astro.props;
 <div class="dropdown">
 	<details>
 		<summary>{title}</summary>
-		<p class="dropdown-body">{body}</p>
+		<hr />
+		<div class="dropdown-body">
+			<p class="text-left">{body}</p>
+			<slot />
+		</div>
 	</details>
 </div>
 
@@ -23,6 +27,7 @@ const { title, body } = Astro.props;
 	}
 
 	details {
+		width: 100%;
 		text-align: left;
 		align-self: flex-start; /* Add this line */
 	}
