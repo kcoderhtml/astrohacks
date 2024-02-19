@@ -1,8 +1,8 @@
 # FILEPATH: /Users/kierank/Projects/astrohacks/netlify.toml
 
 [build]
-command = "bunx astro build"
+command = "bun run astro build"
 publish = "dist"
 
 [dev]
-command = "bunx astro dev"
+command = "bun run astro dev"
