@@ -49,7 +49,7 @@ const stars = Array.from({ length: numStars }, generateStar);
 				stars.map((star) => (
 					<circle
 						class="stars-bg__star"
-						style={`animation-delay: ${star.delay}s`}
+						style={`animation-delay: ${star.delay}s; animation-duration: 6s; animation-iteration-count: infinite; animation-name: blink;`}
 						cx={star.x}
 						cy={star.y}
 						r={star.r}
@@ -203,6 +203,7 @@ const stars = Array.from({ length: numStars }, generateStar);
 		top: 0;
 		translate: translateY(-200px);
 		width: 100%;
+		z-index: 0;
 	}
 
 	@keyframes blink {
@@ -215,10 +216,6 @@ const stars = Array.from({ length: numStars }, generateStar);
 		100% {
 			opacity: 0;
 		}
-	}
-	.stars-bg__star {
-		opacity: 0;
-		animation: blink 6s infinite;
 	}
 
 	.background-gradient {

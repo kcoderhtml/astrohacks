@@ -11,6 +11,11 @@ import Dropdown from "../components/Dropdown.astro";
 
 			<p class="text-center">Scroll to learn more</p>
 
+			<!-- make an rsvp button -->
+			<a class="rsvp-button" href="https://forms.gle/WfniEKEFr2DrTvP77">
+				RSVP
+			</a>
+
 			<svg
 				class="scroll-icon"
 				viewBox="0 0 48 48"
@@ -173,6 +178,7 @@ import Dropdown from "../components/Dropdown.astro";
 			color: white;
 			font-size: 20px;
 			line-height: 1.6;
+			z-index: 1;
 		}
 
 		@media (max-width: 768px) {
@@ -271,6 +277,25 @@ import Dropdown from "../components/Dropdown.astro";
 			justify-content: center;
 			align-items: center;
 			gap: 1rem;
+		}
+
+		.rsvp-button {
+			margin-top: 1rem;
+			background-color: white;
+			color: black;
+			padding: 1rem 2rem;
+			border-radius: 0.25rem;
+			font-size: 1.5rem;
+			text-decoration: none;
+			transition: background-color 0.3s;
+		}
+
+		.rsvp-button:hover {
+			transform: perspective(1rem) scale(1.05) rotateX(-0.25deg);
+		}
+
+		.rsvp-button:active {
+			transform: perspective(1rem) scale(0.95) rotateX(0.25deg);
 		}
 	</style>
 </Layout>
