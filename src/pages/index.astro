@@ -11,6 +11,11 @@ import Dropdown from "../components/Dropdown.astro";
 
 			<p class="text-center">Scroll to learn more</p>
 
+			<!-- make an rsvp button -->
+			<a class="rsvp-button" href="https://forms.gle/WfniEKEFr2DrTvP77">
+				RSVP
+			</a>
+
 			<svg
 				class="scroll-icon"
 				viewBox="0 0 48 48"
@@ -58,15 +63,14 @@ import Dropdown from "../components/Dropdown.astro";
 			/>
 			<Dropdown title="When and where is this hackathon?" body="">
 				<p class="text-left">
-					AstroHacks 2024 will be held at the Boys and Girls Club of Irvine, 295
-					E Yale Loop, Irvine, CA 92604. The event will be held on April 13th
-					for 12 hours, 9am to 9pm.
+					AstroHacks 2024 will be in the Irvine area, TBD. The event will be
+					held on April 13th for 12 hours, 9am to 9pm.
 				</p>
 				<br />
 				<p class="text-left">9am - Welcome in/Breakfast</p>
 				<p class="text-left">10am - Opening ceremony</p>
-				<p class="text-left">11am - Workshop #1</p>
-				<p class="text-left">12pm - Find/Organize your team</p>
+				<p class="text-left">11am - Find/Organize your team</p>
+				<p class="text-left">12pm - Workshop #1</p>
 				<p class="text-left">1pm - Lunch/Start Hacking</p>
 				<p class="text-left">4pm - Icebreaker or Workshop #2</p>
 				<p class="text-left">5pm - Dinner/Continue Hacking</p>
@@ -124,7 +128,7 @@ import Dropdown from "../components/Dropdown.astro";
 				<!-- carlos -->
 				<div class="profile">
 					<img src="images/carlos.png" alt="a photo of carlos" />
-					<h3>Carlos Hernandez</h3>
+					<h3>Carlos Ramirez</h3>
 					<small>Organizer</small>
 					<p>
 						Hi, I'm Carlos and im a current junior. A fun fact about me is that
@@ -162,116 +166,30 @@ import Dropdown from "../components/Dropdown.astro";
 				Club), a 501(c)(3) nonprofit (EIN: 81-2908499).
 			</p>
 		</footer>
+	</main>
 
-		<style>
+	<style>
+		main {
+			margin: auto;
+			padding: 1rem;
+			width: 75%;
+			max-width: calc(100% - 2rem);
+			color: white;
+			font-size: 20px;
+			line-height: 1.6;
+			z-index: 1;
+		}
+
+		@media (max-width: 768px) {
 			main {
-				margin: auto;
-				padding: 1rem;
-				width: 75%;
-				max-width: calc(100% - 2rem);
-				color: white;
-				font-size: 20px;
-				line-height: 1.6;
+				width: 90%;
 			}
-
-			@media (max-width: 768px) {
-				main {
-					width: 90%;
-				}
-			}
-			@media (max-width: 480px) {
-				main {
-					width: 100%;
-				}
-			}
-
-			hr {
-				border: 0;
-				height: 1px;
-				background: white;
-				margin: 2em 0;
-			}
-
-			.full-height-section {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				height: 100vh;
-				padding: 2rem;
-			}
-
-			.dropdowns {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 1rem;
-			}
-
-			.scroll-icon {
-				position: absolute;
-				bottom: 20px;
-				left: 50%;
-				transform: translateX(-50%) rotate(180deg);
-				width: 50px; /* Adjust as needed */
-				height: 50px; /* Adjust as needed */
-			}
-
-			.about-section {
-				margin: 2rem 0;
-			}
-
-			.about-section p {
-				margin: 1rem 0;
-			}
-
-			.image-row {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				gap: 1rem;
-			}
-
-			.image-row img {
-				width: 200px;
-				height: 200px;
-				object-fit: cover;
-				border-radius: 10px;
-				border: 0.075rem solid white;
-			}
-
-			.profiles {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				gap: 1rem;
-			}
-
-			.profile {
-				border-radius: 10px;
-				border: 0.075rem solid white;
-				text-align: center;
-				max-width: 300px;
-			}
-
-			.profile img {
+		}
+		@media (max-width: 480px) {
+			main {
 				width: 100%;
-				border-radius: 10px;
-				object-fit: cover;
-				border-radius: 10px 10px 0 0;
 			}
-
-			.copywrite {
-				text-align: center;
-				margin: 2rem 0;
-			}
-
-			.insta-copywrite {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				gap: 1rem;
-			}
+		}
 
 		hr {
 			border: 0;
@@ -360,22 +278,23 @@ import Dropdown from "../components/Dropdown.astro";
 			gap: 1rem;
 		}
 
-		.top-section {
-			background-image: url("/images/top.jpg");
-			background-repeat: no-repeat;
-			background-size: cover;
+		.rsvp-button {
+			margin-top: 1rem;
+			background-color: white;
+			color: black;
+			padding: 1rem 2rem;
+			border-radius: 0.25rem;
+			font-size: 1.5rem;
+			text-decoration: none;
+			transition: background-color 0.3s;
 		}
 
-		.main-section {
-			background-image: url("/images/middle.jpg");
-			background-repeat: repeat-y;
-			background-size: contain;
+		.rsvp-button:hover {
+			transform: perspective(1rem) scale(1.05) rotateX(-0.25deg);
 		}
 
-		.footer-section {
-			background-image: url("/images/bottom.jpg");
-			background-repeat: no-repeat;
-			background-size: cover;
+		.rsvp-button:active {
+			transform: perspective(1rem) scale(0.95) rotateX(0.25deg);
 		}
 	</style>
 </Layout>

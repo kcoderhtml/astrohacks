@@ -7,19 +7,59 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+// Number of stars you want to add
+const numStars = 175;
+// Function to generate a random star
+function generateStar() {
+	// Generate a random position for the star
+	const x = Math.random() * 545.39;
+	const y = Math.random() * 500;
+	// Generate a random radius for the star
+	const r = Math.random() * 1.5;
+	// Generate a random animation delay for the star
+	const delay = Math.random() * 6;
+
+	return { x, y, r, delay };
+}
+// Generate an array of stars
+const stars = Array.from({ length: numStars }, generateStar);
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta
+			name="description"
+			content="AstroHacks, a completely FREE coding competition for high school students of ANY skill level. We'll have prizes, food, and above all we aim to create a space for students to hang out, learn coding, build projects, and have fun!"
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="background-gradient">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 545.39 500" class="bg">
+			<defs>
+				<style>
+					.stars-bg__star {
+						fill: white;
+					}
+				</style>
+			</defs>
+			{
+				stars.map((star) => (
+					<circle
+						class="stars-bg__star"
+						style={`animation-delay: ${star.delay}s; animation-duration: 6s; animation-iteration-count: infinite; animation-name: blink;`}
+						cx={star.x}
+						cy={star.y}
+						r={star.r}
+					/>
+				))
+			}
+		</svg>
 		<slot />
 	</body>
 </html>
@@ -160,4 +200,55 @@ const { title } = Astro.props;
 		text-decoration: underline;
 		color: rgb(var(--accent));
 	}
+
+	.bg {
+		position: fixed;
+		top: 0;
+		translate: translateY(-200px);
+		width: 100%;
+		z-index: 0;
+	}
+
+	@keyframes blink {
+		0% {
+			opacity: 0;
+		}
+		50% {
+			opacity: 0.6;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
+	.background-gradient {
+		background: rgb(13, 16, 38);
+		background: linear-gradient(
+			180deg,
+			rgba(13, 16, 38, 1) 0%,
+			rgba(22, 24, 66, 1) 35%,
+			rgba(26, 36, 85, 1) 90.5%,
+			/* rgba(28, 43, 95, 1) 91%, */ rgba(35, 62, 125, 1) 100%
+		);
+	}
 </style>
+
+<script>
+	// listen for scroll event and update the position of the stars
+	// add parallax effect to the stars
+	const stars = document.querySelector(".bg") as HTMLElement;
+	let animationFrameId: number;
+
+	// listen for scroll event and update the position of the stars
+	window.addEventListener("scroll", () => {
+		if (stars) {
+			cancelAnimationFrame(animationFrameId);
+			animationFrameId = requestAnimationFrame(() => {
+				const scrollY = window.scrollY;
+				const dampenedScrollY = scrollY * 0.025;
+				const translateY = -200 + dampenedScrollY;
+				stars.style.transform = `translateY(${translateY}px)`;
+			});
+		}
+	});
+</script>
