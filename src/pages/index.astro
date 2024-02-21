@@ -272,6 +272,110 @@ import Dropdown from "../components/Dropdown.astro";
 				align-items: center;
 				gap: 1rem;
 			}
-		</style>
-	</main>
+
+		hr {
+			border: 0;
+			height: 0.1rem;
+			background: white;
+			margin: 2em 0;
+		}
+
+		.full-height-section {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			padding: 2rem;
+		}
+
+		.dropdowns {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.scroll-icon {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%) rotate(180deg);
+			width: 50px; /* Adjust as needed */
+			height: 50px; /* Adjust as needed */
+		}
+
+		.about-section {
+			margin: 2rem 0;
+		}
+
+		.about-section p {
+			margin: 1rem 0;
+		}
+
+		.image-row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 1rem;
+		}
+
+		.image-row img {
+			width: 200px;
+			height: 200px;
+			object-fit: cover;
+			border-radius: 0.25rem;
+			border: 0.075rem solid white;
+		}
+
+		.profiles {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 1rem;
+		}
+
+		.profile {
+			border-radius: 0.25rem;
+			border: 0.075rem solid white;
+			text-align: center;
+			max-width: 300px;
+		}
+
+		.profile img {
+			width: 100%;
+			object-fit: cover;
+			border-radius: inherit;
+		}
+
+		.copywrite {
+			text-align: center;
+			margin: 2rem 0;
+		}
+
+		.insta-copywrite {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.top-section {
+			background-image: url("/images/top.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.main-section {
+			background-image: url("/images/middle.jpg");
+			background-repeat: repeat-y;
+			background-size: contain;
+		}
+
+		.footer-section {
+			background-image: url("/images/bottom.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
 </Layout>
