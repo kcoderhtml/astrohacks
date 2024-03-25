@@ -40,30 +40,32 @@ const stars = Array.from({ length: numStars }, generateStar);
 		<title>{title}</title>
 	</head>
 	<body class="background-gradient">
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 545.39 1500"
-			class="bg"
-		>
-			<defs>
-				<style>
-					.stars-bg__star {
-						fill: white;
-					}
-				</style>
-			</defs>
-			{
-				stars.map((star) => (
-					<circle
-						class="stars-bg__star"
-						style={`animation-delay: ${star.delay}s; animation-duration: 6s; animation-iteration-count: infinite; animation-name: blink;`}
-						cx={star.x}
-						cy={star.y}
-						r={star.r}
-					/>
-				))
-			}
-		</svg>
+		<div class="relative-container">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 545.39 1500"
+				class="bg"
+			>
+				<defs>
+					<style>
+						.stars-bg__star {
+							fill: white;
+						}
+					</style>
+				</defs>
+				{
+					stars.map((star) => (
+						<circle
+							class="stars-bg__star"
+							style={`animation-delay: ${star.delay}s; animation-duration: 6s; animation-iteration-count: infinite; animation-name: blink;`}
+							cx={star.x}
+							cy={star.y}
+							r={star.r}
+						/>
+					))
+				}
+			</svg>
+		</div>
 		<slot />
 	</body>
 </html>
@@ -203,6 +205,11 @@ const stars = Array.from({ length: numStars }, generateStar);
 	a:hover {
 		text-decoration: underline;
 		color: rgb(var(--accent));
+	}
+
+	.relative-container {
+		position: relative;
+		height: 100vh;
 	}
 
 	.bg {
