@@ -14,7 +14,7 @@ const numStars = 175;
 function generateStar() {
 	// Generate a random position for the star
 	const x = Math.random() * 545.39;
-	const y = Math.random() * 500;
+	const y = Math.random() * 1500;
 	// Generate a random radius for the star
 	const r = Math.random() * 1.5;
 	// Generate a random animation delay for the star
@@ -40,7 +40,11 @@ const stars = Array.from({ length: numStars }, generateStar);
 		<title>{title}</title>
 	</head>
 	<body class="background-gradient">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 545.39 500" class="bg">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 545.39 1500"
+			class="bg"
+		>
 			<defs>
 				<style>
 					.stars-bg__star {
@@ -86,7 +90,7 @@ const stars = Array.from({ length: numStars }, generateStar);
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		min-height: 100vh;
+		height: 100%;
 	}
 	h1,
 	h2,
@@ -106,7 +110,7 @@ const stars = Array.from({ length: numStars }, generateStar);
 		font-size: 2.8rem;
 	}
 	h3 {
-		font-size: 2.2rem;
+		font-size: 2rem;
 	}
 
 	p {
@@ -204,7 +208,6 @@ const stars = Array.from({ length: numStars }, generateStar);
 	.bg {
 		position: fixed;
 		top: 0;
-		translate: translateY(-200px);
 		width: 100%;
 		z-index: 0;
 	}
@@ -239,14 +242,22 @@ const stars = Array.from({ length: numStars }, generateStar);
 	const stars = document.querySelector(".bg") as HTMLElement;
 	let animationFrameId: number;
 
+	if (stars) {
+		animationFrameId = requestAnimationFrame(() => {
+			const scrollY = window.scrollY;
+			const dampenedScrollY = scrollY * 0.01;
+			const translateY = 50 + -dampenedScrollY;
+			stars.style.transform = `translateY(${translateY}px)`;
+		});
+	}
+
 	// listen for scroll event and update the position of the stars
 	window.addEventListener("scroll", () => {
 		if (stars) {
-			cancelAnimationFrame(animationFrameId);
 			animationFrameId = requestAnimationFrame(() => {
 				const scrollY = window.scrollY;
-				const dampenedScrollY = scrollY * 0.025;
-				const translateY = -200 + dampenedScrollY;
+				const dampenedScrollY = scrollY * 0.01;
+				const translateY = 50 + -dampenedScrollY;
 				stars.style.transform = `translateY(${translateY}px)`;
 			});
 		}
