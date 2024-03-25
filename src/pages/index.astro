@@ -55,6 +55,20 @@ import Dropdown from "../components/Dropdown.astro";
 			</p>
 		</section>
 
+		<section class="schedule-section">
+			<h2>Schedule</h2>
+
+			<p>9:00am - Welcome in</p>
+			<p>9:30am - Breakfast/Introduction for the day</p>
+			<p>10:00 - Find/Organize your team - Start Hacking - Breakfast</p>
+			<p>12:30pm - Lunch</p>
+			<p>1:00pm - Start Hacking/Workshop #1</p>
+			<p>2:00pm - Workshop #2</p>
+			<p>5:00pm - Dinner/Presentation Prep</p>
+			<p>6:00-7:00pm - Presentations Judging</p>
+			<p>7:00-8:00pm Awards + Cleanup</p>
+		</section>
+
 		<section class="dropdowns-section">
 			<h2>FAQs</h2>
 			<Dropdown
@@ -67,16 +81,6 @@ import Dropdown from "../components/Dropdown.astro";
 					E Yale Loop, Irvine, CA 92604. The event will be held on April 13th
 					for 12 hours, 9am to 9pm.
 				</p>
-				<br />
-				<p class="text-left">9:00am - Welcome in/Breakfast</p>
-				<p class="text-left">9:30am - Introduction/presentation for the day</p>
-				<p class="text-left">10:00 - Find/Organize your team - Start Hacking</p>
-				<p class="text-left">12:30pm - Lunch & Workshop</p>
-				<p class="text-left">1pm - Lunch/Start Hacking</p>
-				<p class="text-left">5:00pm - Dinner/Continue Hacking</p>
-				<p class="text-left">6:00pm - Work on Presentation 6:30pm - Presentations</p>
-				<p class="text-left">7:00pm - Judging</p>
-				<p class="text-left">7:30 - 8:00pm - CLEANUP</p>
 			</Dropdown>
 
 			<Dropdown
@@ -141,7 +145,31 @@ import Dropdown from "../components/Dropdown.astro";
 
 		<hr />
 
-		<footer class="copywrite">
+		<section>
+			<h2>Our Sponsors</h2>
+			<p>Thank you to our sponsors for making AstroHacks possible!</p>
+			<br />
+
+			<div class="sponsers">
+				<div>
+					<h3>Hack Club</h3>
+					<img src="images/hackclub.png" alt="" />
+				</div>
+				<div>
+					<h3>Boys & Girls Club</h3>
+					<img src="images/bgca.svg" alt="" />
+				</div>
+				<div>
+					<h3>CodeCrafters</h3>
+					<img src="images/codecrafters.png" alt="" />
+				</div>
+				<div>
+					<h3>APEERS</h3>
+					<img src="images/apeers.png" alt="" />
+				</div>
+			</div>
+
+			<footer class="copywrite"></footer>
 			<p class="insta-copywrite">
 				© 2024 AstroHacks. | <a href="https://www.instagram.com/astrohacks_/">
 					<svg
@@ -166,7 +194,7 @@ import Dropdown from "../components/Dropdown.astro";
 				AstroHacks is fiscally sponsored by The Hack Foundation (d.b.a. Hack
 				Club), a 501(c)(3) nonprofit (EIN: 81-2908499).
 			</p>
-		</footer>
+		</section>
 	</main>
 
 	<style>
@@ -232,6 +260,10 @@ import Dropdown from "../components/Dropdown.astro";
 			margin: 1rem 0;
 		}
 
+		.schedule-section {
+			margin: 2rem 0;
+		}
+
 		.image-row {
 			display: flex;
 			flex-wrap: wrap;
@@ -265,6 +297,21 @@ import Dropdown from "../components/Dropdown.astro";
 			width: 100%;
 			object-fit: cover;
 			border-radius: inherit;
+		}
+
+		.sponsers {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 1rem;
+		}
+		.sponsers div {
+			text-align: center;
+		}
+
+		.sponsers img {
+			width: 15em;
+			object-fit: cover;
 		}
 
 		.copywrite {
