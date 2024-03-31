@@ -11,7 +11,6 @@ import Dropdown from "../components/Dropdown.astro";
 
 			<p class="text-center">Scroll to learn more</p>
 
-			<!-- make an rsvp button -->
 			<a class="rsvp-button" href="https://forms.gle/WfniEKEFr2DrTvP77">
 				RSVP
 			</a>
@@ -53,7 +52,9 @@ import Dropdown from "../components/Dropdown.astro";
 
 			<p>
 				Interested? Excited? Ready to compete with existing friends or new
-				friends? <a href="">Register today!</a>
+				friends? <a href="">Register today!</a> and <a
+					href="https://discord.gg/4Twy7jGY6q">join our Discord!</a
+				> We can't wait to see you!
 			</p>
 		</section>
 
@@ -206,6 +207,13 @@ import Dropdown from "../components/Dropdown.astro";
 			Club), a 501(c)(3) nonprofit (EIN: 81-2908499).
 		</p>
 	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+		new Crate({
+			server: "1155200923212197938", // AstroHacks
+			channel: "1156424554567180298", // #bot-commands
+		});
+	</script>
 </Layout>
 
 <style>
@@ -246,6 +254,10 @@ import Dropdown from "../components/Dropdown.astro";
 		height: 92vh;
 		padding: 2rem;
 		margin-top: 8rem;
+	}
+
+	.full-height-section > * {
+		padding: 0.5rem;
 	}
 
 	.dropdowns {
